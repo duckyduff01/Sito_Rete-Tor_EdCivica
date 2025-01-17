@@ -7,7 +7,7 @@
 - Creazione pagina di esempio del primo argomento ( Argomento_1).
 - Creazione del css utilizzato in index.html e Argomento_1, nome file makeup.css
 - Implementazione dei link script js
-- Aggiunta commeneti iniziali.
+- Aggiunta commenti iniziali.
 
 
 
