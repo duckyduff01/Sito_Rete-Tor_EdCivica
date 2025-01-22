@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -6,13 +7,20 @@
         <title>La Rete Tor / Cos'è Tor?</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <style>
-          body{
-            background-image: url("/sitoTor/img/background.jpg");
-            background-attachment: fixed;
-            background-repeat: no-repeat; 
-            background-size: cover;
-            background-position: center; 
-          }
+            body{
+                background-image: url("../img/background.jpg");
+                background-attachment: fixed;
+                background-repeat: no-repeat; 
+                background-size: cover;
+                background-position: center; 
+            }
+            .macro-argomento{
+            font-size: 18px;
+            margin-top: 10px;
+            }
+            .argomento{
+                margin-left: 20px;
+            }
         </style>
     </head>
 
@@ -23,13 +31,13 @@
                 <a class="nav-link" aria-current="page" href="index.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="1-CheCos'èTor.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Cos'è Tor?</a>
+                <a class="nav-link active" aria-current="page" href="1-CheCoseTor.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Cos'è Tor?</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="2-ComeFunzionaTor.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Come funziona Tor?</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="3-CriticitàDiTor.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Criticità di Tor</a>
+                <a class="nav-link" aria-current="page" href="3-CriticitaDiTor.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Criticità di Tor</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="4-DeepWeb.html" style="letter-spacing: 1px; color: white; font-size: 20px;">Il Deep Web</a>
@@ -46,8 +54,8 @@
             <div class="container" style="color: white; font-family: Verdana;">
                 <p><h2 align="center"><b><u>Cos'è TOR?</u></b></h2></p>
                 <p style="font-size: 18px;">
-                    <mark><b>TOR</b></mark> (acronimo di <i>The Onion Router</i>) è un <u>software libero</u> che permette una navigazione <u>anonima</u> sul Web ed è basato sulla terza generazione
-                    del protocollo di rete di <i><u>onion routing</u>*</i>: tramite il suo utilizzo è molto più difficile tracciare 
+                    <mark><b>TOR</b></mark> (acronimo di <i>The Onion Router</i>) è un <u>software libero</u> che permette una navigazione <u>anonima</u> sul Web ed è basato sul
+                    protocollo di rete di <i><u>onion routing</u>*</i>: tramite il suo utilizzo è molto più difficile tracciare 
                     o intercettare l'attività che l'utente compie su Internet, sia da parte di società commerciali che da parte di soggetti potenzialmente ostili.
                     <br />
                     <br />
@@ -55,24 +63,20 @@
                     i messaggi sono incapsulati in "strati" di crittografia che vengono paragonati agli strati di una cipolla.]
                     <br />
                     <br />
+                    <img src="../img/onion.png" style="display: block; margin: 0 auto;">
                 </p>
                 <br />
-                <p><h3><u>Disponibilità e piattaforme</u></h3></p>
-                <p style="font-size: 18px;">
-                    Tor disponibile per <u>Linux</u>, <u>Windows</u>, <u>Android</u>, <u>MacOS</u> e tramite distribuzioni live (che si avviano da chiave USB o CD), per esempio, <u>Tails</u>. 
-                    Si presenta, principalmente, come un normale browser per la navigazione: viene usata, infatti, una versione di Mozilla Firefox personalizzata e modificata.
-                </p>
-                <br />
-                <img url="../img/torlogo.avif">
+                <hr class="border border-light border-1">
                 <br />
                 <p><h3><u>La storia di TOR</u></h3></p>
-                <p style="font-size: 18px;">
+                <p style="font-size: 18px">
                     &rArr; <b>Metà degli anni '90</b>: sviluppo del nucleo di Tor per la <i>US Naval Research Laboratory</i>, con lo scopo di proteggere le comunicazioni dei servizi segreti statunitensi;
                     <br />
                     <br />
                     &rArr; <b>1997</b>: sviluppo continuato da <u>DARPA</u> (Defense Advanced Research Projects Agency), un'agenzia governativa del Dipartimento della difesa degli USA 
                     incaricata dello sviluppo di nuove tecnologie per uso militare;
                     <br />
+                    <img src="../img/darpa.png" style="display: block; margin: 0 auto;">
                     <br />
                     &rArr; <b>20 settembre 2002</b>: lanciata la <b><u>prima versione alfa</u></b>;
                     <br />
@@ -82,8 +86,16 @@
                     e della libertà di parola nel contesto dell'era digitale, concesse dei fondi affinché il suo sviluppo fosse mantenuto attivo;
                     <br />
                     <br />
-                    &rArr; <b>2006</b>: <b><i>Roger Dingledine</i></b> fondò <b><u>The Tor Project</u></b>, un'associazione (no profit) <u>responsabile dello sviluppo di <b>Tor</b></u>. 
+                    &rArr; <b>2006</b>: <mark><b><i>Roger Dingledine</i></b></mark> fondò <mark><b>The Tor Project</b></mark>, un'associazione (no profit) <u>responsabile dello sviluppo di <b>Tor</b></u>. 
                     La EFF continuò ad essere il principale sponsor del progetto;
+                    <br />
+                    <br />
+                </p>
+                <div style="display: flex; justify-content: center; gap: 20px;">
+                    <img src="../img/roger.jpg" style="width: 316px; height: 178px; border-radius: 10px;">
+                    <img src="../img/torProject.png" style="width: 200px; height: 200px;">
+                </div>
+                <p style="font-size: 18px">
                     <br />
                     <br />
                     &rArr; <b>8 settembre 2006</b>: serie di <u>sequestri di server Tor in Germania</u> da parte delle autorità per controllare l'<u>eventuale presenza di materiale illegale</u>, 
@@ -100,14 +112,65 @@
                     <br />
                     &rArr; <b>3 aprile 2023</b>: Tor e il provider svedese di VPN Mullvad hanno rilasciato <b>Mullvad Browser</b>, 
                     una <u>versione modificata di Mozilla e meno rigida del Tor browser</u>.
+                    <br />
+                    <br />
+                    <img src="../img/mullvad.jpg" style="display: block; margin: 0 auto; border-radius: 10px;">
+                    <br />
+                    <br />
+                    <hr class="border border-light border-1">
                 </p>
                 <br />
-                <br />  
-                
+                <p><h3><u>Disponibilità e piattaforme</u></h3></p>
+                <p style="font-size: 18px">
+                    <b>TOR</b> è disponibile per <u>Linux</u>, <u>Windows</u>, <u>Android</u>, <u>MacOS</u> e tramite distribuzioni live (che si avviano da chiave USB o CD), per esempio, 
+                    <u>Tails</u>. Si presenta, principalmente, 
+                    come un normale browser per la navigazione: viene usata, infatti, una versione di Mozilla Firefox personalizzata e modificata.
+                </p>
+                <br />
+                <hr class="border border-light border-1">
+                <br />
+                <p><h3><u>Interfaccia utente</u></h3></p>
+                <p style="font-size: 18px">
+                    L'interfaccia utente del browser Tor è simile a quella di <u>Mozilla Firefox</u>, essendo che si basa su di esso. 
+                    Tuttavia, presenta alcune variazioni per garantire la <b>privacy</b> e l'<b>anonimato</b> in rete.
+                    <br />
+                    <br />
+                    <ul>
+                        <li class="macro-argomento"><u><b>Barra degli indirizzi con funzionalità avanzate</b></u>
+                            <ul>
+                                <li class="argomento">La barra degli indirizzi mostra l'icona del sito <i>.onion</i> se si accede a un servizio nascosto;</li>
+                            </ul>
+                        </li>
+                        <li class="macro-argomento"><u><b>Pulsante "Nuovo Circuito per questo Sito"</b></u>
+                            <ul>
+                                <li class="argomento">Ricarica la pagina utilizzando un <u>nuovo percorso di rete Tor</u>, generato tramite il menu a 
+                                    tendina con l'icona di uno scudo. Efficace per un nodo lento;
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="macro-argomento"><u><b>Pulsante "Nuova Identità"</b></u>
+                            <ul>
+                                <li class="argomento">Si trova nel menu principale. Permette di ottenere un <u>nuovo indirizzo IP</u> e chiudere tutte le sessioni aperte;</li>
+                            </ul>
+                        </li>
+                        <li class="macro-argomento"><u><b>Barra degli strumenti con icone per la privacy</b></u>
+                            <ul>
+                                <li class="argomento"><b>Sicurezza</b>: consente di impostare diversi livelli di protezione (Standard, Sicurezza Avanzata, Massima Sicurezza);</li>    
+                                <li class="argomento"><b>Icona Tor</b>: fornisce informazioni sulla connessione Tor attuale;</li>
+                            </ul>
+                        </li>
+                        <li class="macro-argomento"><u><b>Schede e modalità di navigazione privata</b></u>
+                            <ul>
+                                <li class="argomento">Le schede funzionano come in Firefox, ma Tor Browser <b><u>non salva</u></b> la cronologia;</li>
+                                <li class="argomento">Puoi aprire nuove schede normali o finestre private.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+                <br />
             </div>
             <br />
             <br />
         </div>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
