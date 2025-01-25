@@ -75,7 +75,9 @@
               I <i><u>Bridge routers</i></u> sono invece utilizzati per bypassare la censura in aree dove Tor è bloccato. </p>
         </ul>
       </div>
+      <br />    
       <img src="/SitoTor/img/funzionamento_tor.jpg" width="800" height="315" class="img-fluid mx-auto d-block" style="border-radius: 20px; box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.7);">   
+      <br />
       <br />
       <br />
 
@@ -98,20 +100,23 @@
             <h1 class="display-6" style="text-align: center; text-shadow: 2px 2px 4px #000000; color: rgb(230, 221, 221); font-family: verdana; font-size: 20px; letter-spacing: 1px;"><b>TOR source code: Interazione entry guard</b></h1>
             <hr>
             <textarea id="code1" name="code1">
-         K = K_1 | K_2 | K_3 | ...
+	         K = K_1 | K_2 | K_3 | ...
 
-         Where H(x,t) is HMAC_SHA256 with value x and key t
-           and K_1     = H(m_expand | INT8(1) , KEY_SEED )
-           and K_(i+1) = H(K_i | m_expand | INT8(i+1) , KEY_SEED )
-           and m_expand is an arbitrarily chosen value,
-           and INT8(i) is a octet with the value "i".
+	         Where H(x,t) is HMAC_SHA256 with value x and key t
+	           and K_1     = H(m_expand | INT8(1) , KEY_SEED )
+	           and K_(i+1) = H(K_i | m_expand | INT8(i+1) , KEY_SEED )
+	           and m_expand is an arbitrarily chosen value,
+	           and INT8(i) is a octet with the value "i".
        
-In RFC5869's vocabulary, this is HKDF-SHA256 with info == m_expand, salt == t_key (a constant), and IKM == secret_input (the output of the ntor handshake).
-m_expand and t_key are constant parameters, whose values are stated whenever the use of KDF-RFC5869 is specified.
-                  </textarea>
+		In RFC5869's vocabulary, this is HKDF-SHA256 with info == m_expand, salt == t_key (a constant), and IKM == secret_input (the output of the ntor handshake).
+		m_expand and t_key are constant parameters, whose values are stated whenever the use of KDF-RFC5869 is specified.
+           </textarea>
           </div>
         </div>
       </div>
+
+      <br />
+      <br />
 
       <div class="row">         <!--  ENTRY GUARD -->
         <div class="col-md-3">
@@ -129,19 +134,21 @@ m_expand and t_key are constant parameters, whose values are stated whenever the
             <h1 class="display-6" style="text-align: center; text-shadow: 2px 2px 4px #000000; color: rgb(230, 221, 221); font-family: verdana; font-size: 20px; letter-spacing: 1px;"><b>TOR source code: Interazione entry guard</b></h1>
             <hr>
             <textarea id="code2" name="code2">
-- {pvar:ADDED_ON_DATE}: The date on which it was added to sampled_guards.
-We set this value to a point in the past, using RAND(now, {GUARD_LIFETIME}/10).
-See Appendix [RANDOM] below.
-- {pvar:ADDED_BY_VERSION}: The version of Tor that added it to sampled_guards.
-- {pvar:IS_LISTED}: Whether it was listed as a usable Guard in the _most recent_ consensus we have seen.
-- {pvar:FIRST_UNLISTED_AT}: If IS_LISTED is false, the publication date of the earliest consensus in which this guard was listed such that we have not seen it listed in any later consensus. Otherwise "None."
-We randomize this to a point in the past, based on RAND(added_at_time, {REMOVE_UNLISTED_GUARDS_AFTER} / 5)
-                  </textarea>
+		- {pvar:ADDED_ON_DATE}: The date on which it was added to sampled_guards.
+		We set this value to a point in the past, using RAND(now, {GUARD_LIFETIME}/10).
+		See Appendix [RANDOM] below.
+		- {pvar:ADDED_BY_VERSION}: The version of Tor that added it to sampled_guards.
+		- {pvar:IS_LISTED}: Whether it was listed as a usable Guard in the _most recent_ consensus we have seen.
+		- {pvar:FIRST_UNLISTED_AT}: If IS_LISTED is false, the publication date of the earliest consensus in which this guard was listed such that we have not seen it listed in any later consensus. Otherwise "None."
+		We randomize this to a point in the past, based on RAND(added_at_time, {REMOVE_UNLISTED_GUARDS_AFTER} / 5)
+            </textarea>
           </div>
         </div>
-      
       </div>
 
+      <br />
+      <br />
+	    
       <div class="row">            <!-- Middleman router --> 
         <div class="col-md-6">
           <div class=" container-fluid bg-purple text-white  p-4 mb-3  rounded-4" style=" box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.7); background-color: rgb(34,1,58);">
@@ -167,6 +174,8 @@ We randomize this to a point in the past, based on RAND(added_at_time, {REMOVE_U
         </div>
       </div>
 
+      <br />
+
       <div class="col-md-12">      <!-- Exit router -->
         <div class=" container-fluid bg-purple text-white  p-4 mb-3  rounded-4" style=" box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.7); background-color: rgb(34,1,58);">
           <h1 class="display-6" style="text-align: center; text-shadow: 2px 2px 4px #000000; color: rgb(230, 221, 221); font-family: Verdana; font-size: 25px; letter-spacing: 1px;"><b>Bridge Router</b></h1>
@@ -178,26 +187,23 @@ We randomize this to a point in the past, based on RAND(added_at_time, {REMOVE_U
         </div>
       </div>
     </div>
-
-
-
+	  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/python/python.min.js"></script>
-<script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("code1"), {
-        lineNumbers: true, // Mostra i numeri di riga
-        mode: "markdown", // Modalità di evidenziazione per text file
-        theme: "material-darker", // Tema scuro
-        lineWrapping: true // Abilita il wrapping delle righe
-    });
-    var editor = CodeMirror.fromTextArea(document.getElementById("code2"), {
-        lineNumbers: true, // Mostra i numeri di riga
-        mode: "markdown", // Modalità di evidenziazione per Python
-        theme: "material-darker", // Tema scuro
-        lineWrapping: true // Abilita il wrapping delle righe
-    });
-</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/python/python.min.js"></script>
+    <script>
+	var editor = CodeMirror.fromTextArea(document.getElementById("code1"), {
+		lineNumbers: true, // Mostra i numeri di riga
+		 mode: "markdown", // Modalità di evidenziazione per text file
+		theme: "material-darker", // Tema scuro
+		lineWrapping: true // Abilita il wrapping delle righe
+	});
+	var editor = CodeMirror.fromTextArea(document.getElementById("code2"), {
+	        lineNumbers: true, // Mostra i numeri di riga
+	        mode: "markdown", // Modalità di evidenziazione per Python
+	        theme: "material-darker", // Tema scuro
+	        lineWrapping: true // Abilita il wrapping delle righe
+	});
+    </script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
